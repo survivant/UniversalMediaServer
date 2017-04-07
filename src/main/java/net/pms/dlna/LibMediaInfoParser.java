@@ -433,6 +433,8 @@ public class LibMediaInfoParser {
 			format = FormatConfiguration.MPEGPS;
 		} else if ("mpeg-ts".equals(value) || "bdav".equals(value)) {
 			format = FormatConfiguration.MPEGTS;
+		} else if (value.contains("isom") || value.contains("mp4") || "xvid".equals(value) || "20".equals(value) || value.startsWith("m4v") || value.equals("v_mpeg4/iso/asp") || value.equals("v_mpeg4/iso/sp")) {
+			format = FormatConfiguration.MP4;
 		} else if (value.contains("m4a") || value.contains("mp42 (mp42")) {
 			if (audio.getCodecA() != null && audio.getCodecA().contains("aac")) {
 				format = FormatConfiguration.AAC;
@@ -456,8 +458,6 @@ public class LibMediaInfoParser {
 			format = FormatConfiguration.MATROSKA;
 		} else if (value.startsWith("ogg")) {
 			format = FormatConfiguration.OGG;
-		} else if (value.contains("isom") || value.contains("mp4") || "xvid".equals(value) || "20".equals(value) || value.startsWith("m4v") || value.equals("v_mpeg4/iso/asp") || value.equals("v_mpeg4/iso/sp")) {
-			format = FormatConfiguration.MP4;
 		} else if (value.startsWith("aif")) {
 			format = FormatConfiguration.AIFF;
 		} else if (value.startsWith("atmos") || "131".equals(value)) {
