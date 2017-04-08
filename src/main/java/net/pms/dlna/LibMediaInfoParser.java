@@ -433,8 +433,6 @@ public class LibMediaInfoParser {
 			format = FormatConfiguration.MPEGPS;
 		} else if ("mpeg-ts".equals(value) || "bdav".equals(value)) {
 			format = FormatConfiguration.MPEGTS;
-		} else if (value.contains("isom (") || value.contains("mp41") || value.contains("mp43") || "xvid".equals(value) || "20".equals(value) || value.startsWith("m4v") || value.equals("v_mpeg4/iso/asp") || value.equals("v_mpeg4/iso/sp")) {
-			format = FormatConfiguration.MP4;
 		} else if (value.contains("m4a") || value.contains("mp42 (mp42")) {
 			if (audio.getCodecA() != null && audio.getCodecA().equals("aac")) {
 //			if (media.getAudioTracksList().get(0).getCodecA().equals("aac")) {
@@ -447,6 +445,8 @@ public class LibMediaInfoParser {
 			format = FormatConfiguration.THREEGPP2;
 		} else if (value.startsWith("3gpp media")) {
 			format = FormatConfiguration.THREEGPP;
+		} else if (value.contains("isom") || value.contains("mp4") || "xvid".equals(value) || "20".equals(value) || value.startsWith("m4v") || value.equals("v_mpeg4/iso/asp") || value.equals("v_mpeg4/iso/sp")) {
+			format = FormatConfiguration.MP4;
 		} else if (value.startsWith("flash")) {
 			format = FormatConfiguration.FLV;
 		} else if ("webm".equals(value)) {
