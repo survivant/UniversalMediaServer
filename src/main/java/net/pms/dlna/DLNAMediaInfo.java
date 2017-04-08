@@ -1513,7 +1513,7 @@ public class DLNAMediaInfo implements Cloneable {
 					mimeType = HTTPResource.AUDIO_OGA_TYPEMIME;
 				} else if ("matroska".equals(container) || "mkv".equals(container)) {
 					mimeType = HTTPResource.AUDIO_MKA_TYPEMIME;
-				} else if ("aac".equals(container) || container.contains("m4a") || container.contains("mp42 (mp42")) {
+				} else if ("aac".equals(container) || "m4a".equals(container)) {
 					if (codecA.equals(FormatConfiguration.AAC) || codecA.equals(FormatConfiguration.AAC_HE)) {
 						mimeType = HTTPResource.AUDIO_AAC_TYPEMIME;
 					} else {
