@@ -1361,12 +1361,6 @@ public class DLNAMediaInfo implements Cloneable {
 				case "3gp":
 					mimeType = HTTPResource.THREEGPP_TYPEMIME;
 					break;
-				case FormatConfiguration.AAC:
-					mimeType = HTTPResource.AUDIO_AAC_TYPEMIME;
-					break;
-				case FormatConfiguration.AAC_HE:
-					mimeType = HTTPResource.AUDIO_AAC_TYPEMIME;
-					break;
 				case "avi":
 					mimeType = HTTPResource.AVI_TYPEMIME;
 					break;
@@ -1379,6 +1373,12 @@ public class DLNAMediaInfo implements Cloneable {
 					break;
 				case "mov":
 					mimeType = HTTPResource.MOV_TYPEMIME;
+					break;
+				case FormatConfiguration.AAC:
+					mimeType = HTTPResource.AUDIO_AAC_TYPEMIME;
+					break;
+				case FormatConfiguration.AAC_HE:
+					mimeType = HTTPResource.AUDIO_AAC_TYPEMIME;
 					break;
 				case FormatConfiguration.ADPCM:
 					mimeType = HTTPResource.AUDIO_ADPCM_TYPEMIME;
