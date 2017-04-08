@@ -434,7 +434,7 @@ public class LibMediaInfoParser {
 		} else if ("mpeg-ts".equals(value) || "bdav".equals(value)) {
 			format = FormatConfiguration.MPEGTS;
 		} else if (value.contains("m4a") || value.contains("mp42 (mp42")) {
-			if (audio.getCodecA() != null && audio.getCodecA().equals("aac")) {
+			if (value.contains("aac")) {
 //			if (media.getAudioTracksList().get(0).getCodecA().equals("aac")) {
 				format = FormatConfiguration.AAC;
 				media.setContainer(FormatConfiguration.AAC);
