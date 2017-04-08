@@ -1361,6 +1361,12 @@ public class DLNAMediaInfo implements Cloneable {
 				case "3gp":
 					mimeType = HTTPResource.THREEGPP_TYPEMIME;
 					break;
+				case FormatConfiguration.AAC:
+					mimeType = HTTPResource.AUDIO_AAC_TYPEMIME;
+					break;
+				case FormatConfiguration.AAC_HE:
+					mimeType = HTTPResource.AUDIO_AAC_TYPEMIME;
+					break;
 				case "avi":
 					mimeType = HTTPResource.AVI_TYPEMIME;
 					break;
@@ -1394,6 +1400,9 @@ public class DLNAMediaInfo implements Cloneable {
 					break;
 				case FormatConfiguration.FLAC:
 					mimeType = HTTPResource.AUDIO_FLAC_TYPEMIME;
+					break;
+				case FormatConfiguration.M4A:
+					mimeType = HTTPResource.AUDIO_M4A_TYPEMIME;
 					break;
 				case FormatConfiguration.MPA:
 					mimeType = HTTPResource.AUDIO_MPA_TYPEMIME;
@@ -1508,7 +1517,7 @@ public class DLNAMediaInfo implements Cloneable {
 				} else if ("matroska".equals(container) || "mkv".equals(container)) {
 					mimeType = HTTPResource.AUDIO_MKA_TYPEMIME;
 				} else if ("aac".equals(container) || container.contains("m4a") || container.contains("mp42 (mp42")) {
-					if ("aac".equals(codecA)) {
+					if (codecA.equals(FormatConfiguration.AAC) || codecA.equals(FormatConfiguration.AAC_HE)) {
 						mimeType = HTTPResource.AUDIO_AAC_TYPEMIME;
 					} else {
 						mimeType = HTTPResource.AUDIO_M4A_TYPEMIME;
